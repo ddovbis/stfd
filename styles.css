@@ -118,7 +118,7 @@ h1 {
   line-height: .82;
   margin: 0;
   letter-spacing: -0.012em;
-  word-spacing: 0.14em;
+  word-spacing: normal;
   text-wrap: balance;
   background: linear-gradient(90deg, #fff, var(--cyan), var(--mint), #fff);
   -webkit-background-clip: text;
@@ -412,7 +412,7 @@ footer {
   h1 {
     font-size: clamp(3.55rem, 17vw, 6.4rem);
     letter-spacing: 0;
-    word-spacing: 0.12em;
+    word-spacing: normal;
     line-height: 1.02;
   }
 
