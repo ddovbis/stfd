@@ -2,7 +2,7 @@ const translations = {
   en: {
     lang: 'en',
     documentTitle: 'PeeRight — Sit Happens',
-    languageLabel: 'Language',
+    flag: '🇬🇧',
     badge: '🚽 Bathroom diplomacy',
     title: 'Pee Right.',
     subtitle: 'A tiny manifesto for sitting down to pee.',
@@ -50,7 +50,7 @@ const translations = {
   ro: {
     lang: 'ro',
     documentTitle: 'Pipi jos — stropii nu sunt decor',
-    languageLabel: 'Limbă',
+    flag: '🇷🇴',
     badge: '🚽 Diplomație de baie',
     title: 'Pipi jos.',
     subtitle: 'Un mic manifest pentru folosit tronul, nu aruncarea liberă.',
@@ -98,7 +98,7 @@ const translations = {
   ru: {
     lang: 'ru',
     documentTitle: 'Писай сидя — ванная скажет спасибо',
-    languageLabel: 'Язык',
+    flag: '🇷🇺',
     badge: '🚽 Туалетная дипломатия',
     title: 'Сядь, герой.',
     subtitle: 'Короткий манифест за сидячий режим у трона.',
@@ -146,7 +146,7 @@ const translations = {
   hu: {
     lang: 'hu',
     documentTitle: 'Pisi ülve — a fürdő hálás lesz',
-    languageLabel: 'Nyelv',
+    flag: '🇭🇺',
     badge: '🚽 Fürdőszobai diplomácia',
     title: 'Ülj le.',
     subtitle: 'Mini kiáltvány az ülve pisilés nemes művészetéhez.',
@@ -197,14 +197,16 @@ const line = document.querySelector('#line');
 const more = document.querySelector('#more');
 const pledge = document.querySelector('#pledge');
 const microcopy = document.querySelector('#microcopy');
-const language = document.querySelector('#language');
+const languageMenu = document.querySelector('#language-menu');
+const languageToggle = document.querySelector('#language-toggle');
+const languageFlag = document.querySelector('#language-flag');
+const languageOptions = document.querySelector('#language-options');
 
 let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('peeright-language') || 'en';
 let index = 0;
 let pledged = false;
 
 if (!translations[currentLang]) currentLang = 'en';
-language.value = currentLang;
 
 function t() {
   return translations[currentLang];
@@ -222,6 +224,11 @@ function applyLanguage() {
   document.querySelectorAll('[data-i18n]').forEach((node) => {
     const key = node.dataset.i18n;
     if (copy[key]) node.textContent = copy[key];
+  });
+
+  languageFlag.textContent = copy.flag;
+  languageOptions.querySelectorAll('[data-lang]').forEach((button) => {
+    button.classList.toggle('active', button.dataset.lang === currentLang);
   });
 
   pledge.textContent = pledged ? copy.pledgeDone : copy.cta;
@@ -254,11 +261,32 @@ pledge.addEventListener('click', () => {
   microcopy.textContent = copy.pledges[Math.floor(Math.random() * copy.pledges.length)];
   pledge.textContent = copy.pledgeDone;
 });
-language.addEventListener('change', (event) => {
-  currentLang = event.target.value;
+languageToggle.addEventListener('click', () => {
+  const isOpen = languageMenu.classList.toggle('open');
+  languageToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
+languageOptions.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-lang]');
+  if (!button) return;
+  currentLang = button.dataset.lang;
   localStorage.setItem('peeright-language', currentLang);
   pledged = false;
+  languageMenu.classList.remove('open');
+  languageToggle.setAttribute('aria-expanded', 'false');
   applyLanguage();
+});
+
+document.addEventListener('click', (event) => {
+  if (languageMenu.contains(event.target)) return;
+  languageMenu.classList.remove('open');
+  languageToggle.setAttribute('aria-expanded', 'false');
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') return;
+  languageMenu.classList.remove('open');
+  languageToggle.setAttribute('aria-expanded', 'false');
 });
 
 applyLanguage();
