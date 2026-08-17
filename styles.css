@@ -47,7 +47,7 @@ body::before {
 }
 
 .hero {
-  min-height: 78vh;
+  min-height: calc(78vh - 76px);
   display: grid;
   place-items: center;
   align-content: center;
@@ -116,8 +116,8 @@ h1 {
   font-size: clamp(4.2rem, 18vw, 10.5rem);
   line-height: .82;
   margin: 0;
-  letter-spacing: -0.055em;
-  word-spacing: 0.08em;
+  letter-spacing: -0.012em;
+  word-spacing: 0.14em;
   text-wrap: balance;
   background: linear-gradient(90deg, #fff, var(--cyan), var(--mint), #fff);
   -webkit-background-clip: text;
@@ -190,7 +190,7 @@ h1 {
 .facts ul {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  gap: 12px;
   list-style: none;
   padding: 0;
   margin: 18px 0 0;
@@ -249,11 +249,11 @@ footer {
   top: 12px;
   z-index: 10;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 0 0 -58px auto;
-  width: fit-content;
+  margin: 0 auto 22px;
+  width: min(100%, 320px);
   color: var(--muted);
   background: rgba(13, 19, 33, .62);
   border: 1px solid rgba(255,255,255,.16);
@@ -347,7 +347,19 @@ footer {
   .language-switcher {
     position: relative;
     top: 0;
-    margin: 0 auto -34px;
+    margin: 0 auto 20px;
+    width: min(100%, 310px);
+  }
+
+  h1 {
+    font-size: clamp(3.45rem, 16vw, 6.2rem);
+    letter-spacing: -0.006em;
+    word-spacing: 0.16em;
+    line-height: .92;
+  }
+
+  .hero {
+    gap: 16px;
   }
 
   .qr-card {

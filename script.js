@@ -4,7 +4,7 @@ const translations = {
     documentTitle: 'PeeRight — Sit Happens',
     languageLabel: 'Language',
     badge: '🚽 Bathroom diplomacy',
-    title: 'PeeRight.',
+    title: 'Pee Right.',
     subtitle: 'A tiny manifesto for sitting down to pee.',
     cta: 'I accept the throne',
     pledgeDone: 'Pledge accepted ✅',
