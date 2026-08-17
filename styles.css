@@ -116,9 +116,9 @@ body::before {
 h1 {
   display: inline-block;
   font-size: clamp(4.2rem, 18vw, 10.5rem);
-  line-height: 1.08;
+  line-height: 1.16;
   margin: 0;
-  padding-bottom: .06em;
+  padding-bottom: .12em;
   letter-spacing: -0.012em;
   word-spacing: normal;
   text-wrap: balance;
@@ -439,8 +439,8 @@ footer {
     font-size: clamp(3.55rem, 17vw, 6.4rem);
     letter-spacing: 0;
     word-spacing: normal;
-    line-height: 1.12;
-    padding-bottom: .08em;
+    line-height: 1.22;
+    padding-bottom: .14em;
   }
 
   .qr-card {
