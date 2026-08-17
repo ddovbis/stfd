@@ -163,7 +163,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin-top: -24px;
+  margin-top: 8px;
 }
 
 .card, .facts, .quote {
@@ -413,7 +413,7 @@ footer {
     font-size: clamp(3.55rem, 17vw, 6.4rem);
     letter-spacing: 0;
     word-spacing: 0.12em;
-    line-height: .95;
+    line-height: 1.02;
   }
 
   .qr-card {

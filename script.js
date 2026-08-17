@@ -1,7 +1,7 @@
 const translations = {
   en: {
     lang: 'en',
-    documentTitle: 'PeeRight — Sit Happens',
+    documentTitle: 'Pee Right — Sit Happens',
     flag: '🇬🇧',
     badge: '🚽 Bathroom diplomacy',
     title: 'Pee Right.',
