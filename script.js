@@ -25,7 +25,7 @@ const translations = {
     qrText: 'Tape this near the throne. Technology, finally doing important work.',
     qrDownload: 'Download QR code',
     more: 'Give me another slogan',
-    footer: 'Made with love, peer pressure, and mild disgust.',
+    footer: 'Vibe-coded with love, peer pressure, and mild disgust.',
     medical: 'Medical note: healthy people can choose either posture; if peeing is difficult or frequent, talk to a doctor, not a QR code.',
     slogans: [
       'Sit happens. Let it.',
@@ -73,7 +73,7 @@ const translations = {
     qrText: 'Lipește-l lângă tron. În sfârșit, tehnologia rezolvă probleme reale.',
     qrDownload: 'Descarcă QR-ul',
     more: 'Mai dă-mi una',
-    footer: 'Făcut cu dragoste, presiune socială și un pic de scârbă constructivă.',
+    footer: 'Vibe-coded cu dragoste, presiune socială și un pic de scârbă constructivă.',
     medical: 'Notă medicală: dacă ești sănătos, poți alege cum vrei; dacă urinezi greu sau prea des, vorbește cu un medic, nu cu un QR.',
     slogans: [
       'Stai jos. Standardele sus.',
@@ -121,7 +121,7 @@ const translations = {
     qrText: 'Повесь рядом с троном. Наконец-то технологии занялись чем-то важным.',
     qrDownload: 'Скачать QR-код',
     more: 'Ещё лозунг',
-    footer: 'Сделано с любовью, общественным давлением и лёгким бытовым отвращением.',
+    footer: 'Vibe-coded с любовью, общественным давлением и лёгким бытовым отвращением.',
     medical: 'Медицинская ремарка: если всё нормально, выбирай как удобно; если мочиться трудно или слишком часто — лучше к врачу, а не к QR-коду.',
     slogans: [
       'Сел — и все довольны.',
@@ -169,7 +169,7 @@ const translations = {
     qrText: 'Ragaszd a trón mellé. A technológia végre valódi problémát old meg.',
     qrDownload: 'QR-kód letöltése',
     more: 'Jöhet még egy',
-    footer: 'Készült szeretettel, társadalmi nyomással és enyhe, hasznos undorral.',
+    footer: 'Vibe-coded szeretettel, társadalmi nyomással és enyhe, hasznos undorral.',
     medical: 'Orvosi megjegyzés: ha minden rendben, válassz kényelmesen; ha nehéz vagy túl gyakori a vizelés, inkább orvost kérdezz, ne QR-kódot.',
     slogans: [
       'Ülj le. Ennyi a trükk.',
