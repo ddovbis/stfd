@@ -73,10 +73,10 @@ const translations = {
     qrText: 'Lipește-l lângă tron. În sfârșit, tehnologia face ceva util.',
     qrDownload: 'Descarcă QR-ul',
     more: 'Mai dă-mi una',
-    footer: 'Făcut cu dragoste, presiune socială și puțină scârbă constructivă.',
+    footer: 'Codat pe vibe, cu dragoste, presiune socială și puțină scârbă constructivă.',
     medical: 'Notă medicală: dacă ești sănătos, alegi cum vrei. Dacă urinezi greu sau prea des, vorbește cu un medic, nu cu un QR.',
     slogans: [
-      'Ia loc. Ține standardele sus.',
+      'Ia loc jos. Ține standardele sus.',
       'Fii om, nu aspersor.',
       'Șosetele merită o viață mai bună.',
       'Colacul nu mușcă.',
@@ -121,7 +121,7 @@ const translations = {
     qrText: 'Повесь рядом с унитазом. Пусть технологии наконец делают что-то полезное.',
     qrDownload: 'Скачать QR-код',
     more: 'Ещё лозунг',
-    footer: 'Сделано на вайбе, с любовью, общественным давлением и лёгким бытовым ужасом.',
+    footer: 'Написано на вайбе, с любовью, общественным давлением и лёгким бытовым ужасом.',
     medical: 'Медицинская ремарка: если всё ок — делай как удобно. Если мочиться трудно, больно или слишком часто — к врачу, а не к QR-коду.',
     slogans: [
       'Сел — и все выдохнули.',
@@ -169,7 +169,7 @@ const translations = {
     qrText: 'Ragaszd a trón mellé. Végre technológia egy valódi problémára.',
     qrDownload: 'QR-kód letöltése',
     more: 'Még egyet kérek',
-    footer: 'Vibe-kódolva szeretettel, társadalmi nyomással és kevés, de hasznos undorral.',
+    footer: 'Vibe-ból kódolva, szeretettel, társadalmi nyomással és kevés, de hasznos undorral.',
     medical: 'Orvosi megjegyzés: ha minden oké, válaszd, ami kényelmes. Ha nehezen vagy túl gyakran pisilsz, inkább orvost kérdezz, ne egy QR-kódot.',
     slogans: [
       'Ülj le. Ennyi a mutatvány.',
