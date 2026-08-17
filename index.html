@@ -10,8 +10,18 @@
 </head>
 <body>
   <main class="page" aria-labelledby="title">
+    <div class="language-switcher" aria-label="Language selector">
+      <label for="language" data-i18n="languageLabel">Language</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="ro">Română</option>
+        <option value="ru">Русский</option>
+        <option value="hu">Magyar</option>
+      </select>
+    </div>
+
     <section class="hero">
-      <div class="badge" aria-label="Bathroom diplomacy level: high">🚽 Bathroom diplomacy</div>
+      <div class="badge" data-i18n="badge">🚽 Bathroom diplomacy</div>
 
       <div class="throne" aria-hidden="true">
         <div class="halo"></div>
@@ -21,55 +31,66 @@
         <div class="sparkle s3">✦</div>
       </div>
 
-      <h1 id="title">PeeRight.</h1>
-      <p class="subtitle">A tiny manifesto for sitting down to pee.</p>
+      <h1 id="title" data-i18n="title">PeeRight.</h1>
+      <p class="subtitle" data-i18n="subtitle">A tiny manifesto for sitting down to pee.</p>
 
-      <button class="cta" id="pledge" type="button">
+      <button class="cta" id="pledge" type="button" data-i18n="cta">
         I accept the throne
       </button>
 
-      <p class="microcopy" id="microcopy">Standing is legal. Sitting is civilized.</p>
+      <p class="microcopy" id="microcopy" data-i18n="microcopy">Standing is legal. Sitting is civilized.</p>
     </section>
 
     <section class="cards" aria-label="Reasons to sit">
       <article class="card">
         <span class="icon">🎯</span>
-        <h2>No splash damage</h2>
-        <p>Your bathroom is not a Jackson Pollock installation. Aim assist: activated.</p>
+        <h2 data-i18n="card1Title">No splash damage</h2>
+        <p data-i18n="card1Text">Your bathroom is not a Jackson Pollock installation. Aim assist: activated.</p>
       </article>
 
       <article class="card">
         <span class="icon">🧘</span>
-        <h2>Better chill mode</h2>
-        <p>For men with urinary symptoms, sitting can help empty the bladder more comfortably.</p>
+        <h2 data-i18n="card2Title">Better chill mode</h2>
+        <p data-i18n="card2Text">For men with urinary symptoms, sitting can help empty the bladder more comfortably.</p>
       </article>
 
       <article class="card">
         <span class="icon">🤝</span>
-        <h2>Social contract</h2>
-        <p>The next person should not need forensic footwear. Be the hero in socks.</p>
+        <h2 data-i18n="card3Title">Social contract</h2>
+        <p data-i18n="card3Text">The next person should not need forensic footwear. Be the hero in socks.</p>
       </article>
     </section>
 
     <section class="facts">
-      <h2>The five-second argument</h2>
+      <h2 data-i18n="factsTitle">The five-second argument</h2>
       <ul>
-        <li>Cleaner floor.</li>
-        <li>Cleaner seat.</li>
-        <li>Less noise at night.</li>
-        <li>More relaxed posture.</li>
-        <li>Zero masculinity lost. We checked.</li>
+        <li data-i18n="fact1">Cleaner floor.</li>
+        <li data-i18n="fact2">Cleaner seat.</li>
+        <li data-i18n="fact3">Less noise at night.</li>
+        <li data-i18n="fact4">More relaxed posture.</li>
+        <li data-i18n="fact5">Zero masculinity lost. We checked.</li>
       </ul>
+    </section>
+
+    <section class="qr-card" aria-labelledby="qr-title">
+      <div>
+        <h2 id="qr-title" data-i18n="qrTitle">Print the QR. Begin the reform.</h2>
+        <p data-i18n="qrText">Tape this near the throne. Technology, finally doing important work.</p>
+        <a class="qr-link" href="./peeright-qr.png" download data-i18n="qrDownload">Download QR code</a>
+      </div>
+      <a class="qr-frame" href="./peeright-qr.png" download aria-label="Download QR code">
+        <img src="./peeright-qr.png" alt="QR code for the PeeRight website" />
+      </a>
     </section>
 
     <section class="quote" aria-live="polite">
       <p id="line">“Sit happens. Let it.”</p>
-      <button class="ghost" id="more" type="button">Give me another slogan</button>
+      <button class="ghost" id="more" type="button" data-i18n="more">Give me another slogan</button>
     </section>
 
     <footer>
-      <p>Made with love, peer pressure, and mild disgust.</p>
-      <p class="small">Medical note: healthy people can choose either posture; if peeing is difficult or frequent, talk to a doctor, not a QR code.</p>
+      <p data-i18n="footer">Made with love, peer pressure, and mild disgust.</p>
+      <p class="small" data-i18n="medical">Medical note: healthy people can choose either posture; if peeing is difficult or frequent, talk to a doctor, not a QR code.</p>
     </footer>
   </main>
 
