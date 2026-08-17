@@ -114,9 +114,11 @@ body::before {
 .s3 { right: 36px; bottom: 18px; font-size: 22px; animation-delay: 1.1s; color: var(--pink); }
 
 h1 {
+  display: inline-block;
   font-size: clamp(4.2rem, 18vw, 10.5rem);
-  line-height: .82;
+  line-height: 1.08;
   margin: 0;
+  padding-bottom: .06em;
   letter-spacing: -0.012em;
   word-spacing: normal;
   text-wrap: balance;
@@ -243,39 +245,53 @@ footer {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
+.hero-top {
+  width: min(100%, 430px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.hero-top .badge {
+  min-width: 0;
+  flex: 0 1 auto;
+  white-space: nowrap;
+}
+
 .language-menu {
-  position: fixed;
-  top: 12px;
-  right: max(12px, env(safe-area-inset-right));
+  position: relative;
   z-index: 20;
+  flex: 0 0 auto;
 }
 
 .language-toggle {
   appearance: none;
   border: 1px solid rgba(255,255,255,.2);
   cursor: pointer;
-  min-width: 58px;
-  height: 46px;
+  min-width: 54px;
+  height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 2px;
   color: var(--ink);
-  background: rgba(13, 19, 33, .74);
+  background: rgba(13, 19, 33, .64);
   border-radius: 999px;
-  box-shadow: 0 12px 36px rgba(0,0,0,.28);
+  box-shadow: 0 12px 36px rgba(0,0,0,.22);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   font: inherit;
 }
 
 #language-flag {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1;
 }
 
 .chevron {
-  font-size: 1rem;
+  font-size: .92rem;
   opacity: .78;
   transform: translateY(-1px);
 }
@@ -288,7 +304,7 @@ footer {
   gap: 6px;
   min-width: 180px;
   padding: 8px;
-  background: rgba(13, 19, 33, .9);
+  background: rgba(13, 19, 33, .92);
   border: 1px solid rgba(255,255,255,.18);
   border-radius: 20px;
   box-shadow: 0 20px 54px rgba(0,0,0,.36);
@@ -395,17 +411,27 @@ footer {
 @media (max-width: 800px) {
   .page {
     width: min(100% - 22px, 560px);
-    padding-top: 10px;
+    padding-top: 8px;
   }
 
-  .language-menu {
-    top: 10px;
-    right: max(10px, env(safe-area-inset-right));
+  .hero-top {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .hero-top .badge {
+    padding-inline: 13px;
+    font-size: .95rem;
+  }
+
+  .language-toggle {
+    min-width: 50px;
+    height: 40px;
   }
 
   .hero {
     min-height: auto;
-    padding: 54px 0 26px;
+    padding: 18px 0 26px;
     gap: 14px;
   }
 
@@ -413,7 +439,8 @@ footer {
     font-size: clamp(3.55rem, 17vw, 6.4rem);
     letter-spacing: 0;
     word-spacing: normal;
-    line-height: 1.02;
+    line-height: 1.12;
+    padding-bottom: .08em;
   }
 
   .qr-card {
