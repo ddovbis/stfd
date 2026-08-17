@@ -251,7 +251,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin: 0 auto 22px;
   width: min(100%, 320px);
   color: var(--muted);
