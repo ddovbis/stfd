@@ -4,8 +4,9 @@ A tiny, multilingual bathroom manifesto encouraging visitors to sit down to pee.
 Built with plain HTML, CSS and JavaScript: no framework, backend, runtime packages,
 external fonts, analytics, or build step.
 
-- **Repository:** https://github.com/ddovbis/stfd (private)
-- **Running instance:** http://168.119.226.28:8123/
+- **Repository:** https://github.com/ddovbis/stfd (public)
+- **Website:** https://ddovbis.github.io/stfd/
+- **Server preview:** http://168.119.226.28:8123/
 - **Local checkout:** `/home/ddovbis/projects/web/stfd`
 - **Languages:** English, Romanian, Russian and Hungarian
 
@@ -14,7 +15,7 @@ external fonts, analytics, or build step.
 - Responsive layout, including narrow 320px screens.
 - Language picker with saved preference and `?lang=en|ro|ru|hu` overrides.
 - Interactive pledge button and rotating localized slogans.
-- Downloadable PNG and SVG QR assets pointing to the running instance.
+- Downloadable PNG and SVG QR assets pointing to the permanent GitHub Pages URL.
 - CSS reduced-motion support; native emoji appearance depends on the device.
 - Language switching still works when browser storage is blocked (without persistence).
 
@@ -91,7 +92,7 @@ private-file exclusion, and project-site subpath compatibility.
 
 ```bash
 npm ci
-npm run qr -- http://168.119.226.28:8123/
+npm run qr -- https://ddovbis.github.io/stfd/
 ```
 
 The argument is the destination embedded in **both** assets. After changing the
@@ -103,25 +104,26 @@ point to their original URL; they are not dynamic redirects.
 
 Run `npm run size` to measure the files in `public/`.
 
-At the STFD rename: **33,252 bytes (32.47 KiB)** for all five deployment files.
-Individually gzipped estimate: **11,297 bytes (11.03 KiB)**; actual transfer size
+With the GitHub Pages QR assets: **33,879 bytes (33.08 KiB)** for all five deployment files.
+Individually gzipped estimate: **11,460 bytes (11.19 KiB)**; actual transfer size
 and compression depend on the host. These figures exclude Git history,
 documentation, tests and development dependencies.
 
-## Future GitHub Pages deployment
+## GitHub Pages deployment
 
-Only the contents of `public/` need uploading. There is no build step.
+**Website:** https://ddovbis.github.io/stfd/
+
+The repository is public because the current GitHub Free plan does not support
+Pages hosting from a private repository. Only `public/` is published as the website;
+Git history, documentation, tests and development dependencies are not deployed.
+
+`.github/workflows/pages.yml` automatically runs all browser tests on pushes to
+`main`, packages `public/`, and deploys it only if the tests pass. It can also be
+started manually from the repository's Actions tab. The deployment uses GitHub's
+built-in workflow token; no manually stored deployment credentials are needed.
+
 All asset references are relative, and `/stfd/` subpath behavior is tested.
+There is no website build step. Pages settings use **GitHub Actions** as the source.
+Both QR assets encode `https://ddovbis.github.io/stfd/`.
 
-1. Confirm the account plan supports Pages for a private repository.
-2. In **Settings → Pages**, choose **GitHub Actions** as the source.
-3. Use a static-site deployment workflow with `actions/configure-pages`,
-   `actions/upload-pages-artifact` (**path: `public`**) and `actions/deploy-pages`.
-   Give the deployment job `pages: write` and `id-token: write` permissions and use
-   the `github-pages` environment.
-4. The usual project URL is `https://ddovbis.github.io/stfd/` unless a custom domain
-   is configured. Regenerate both QR assets for the chosen URL.
-
-Pages is **not enabled** by this repository setup. A private source repository
-alone does not make a published Pages website private. Check current plan/access
-rules in [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).
+See [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).

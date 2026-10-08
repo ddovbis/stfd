@@ -99,7 +99,7 @@ test('QR image downloads and PNG/SVG encode the live site', async ({ page, reque
   const response = await request.get('/stfd-qr.png');
   expect(response.ok()).toBe(true);
   const png = PNG.sync.read(await response.body());
-  expect(jsQR(new Uint8ClampedArray(png.data), png.width, png.height)?.data).toBe('http://168.119.226.28:8123/');
+  expect(jsQR(new Uint8ClampedArray(png.data), png.width, png.height)?.data).toBe('https://ddovbis.github.io/stfd/');
   const svgPixels = await page.evaluate(async () => {
     const image = new Image();
     image.src = './stfd-qr.svg';
@@ -112,7 +112,7 @@ test('QR image downloads and PNG/SVG encode the live site', async ({ page, reque
     context.drawImage(image, 0, 0, 740, 740);
     return Array.from(context.getImageData(0, 0, 740, 740).data);
   });
-  expect(jsQR(new Uint8ClampedArray(svgPixels), 740, 740)?.data).toBe('http://168.119.226.28:8123/');
+  expect(jsQR(new Uint8ClampedArray(svgPixels), 740, 740)?.data).toBe('https://ddovbis.github.io/stfd/');
 });
 
 test('only deployment files are served', async ({ request }) => {
