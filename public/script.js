@@ -1,10 +1,10 @@
 const translations = {
   en: {
     lang: 'en',
-    documentTitle: 'Pee Right — Sit Happens',
+    documentTitle: 'STFD — Sit the Fuck Down',
     flag: '🇬🇧',
     badge: '🚽 Bathroom diplomacy',
-    title: 'Pee Right.',
+    title: 'STFD.',
     subtitle: 'A tiny manifesto for sitting down to pee.',
     cta: 'I accept the throne',
     pledgeDone: 'Pledge accepted ✅',
@@ -28,7 +28,7 @@ const translations = {
     footer: 'Vibe-coded with love, peer pressure, and mild disgust.',
     medical: 'Medical note: healthy people can choose either posture; if peeing is difficult or frequent, talk to a doctor, not a QR code.',
     slogans: [
-      'Sit happens. Let it.',
+      'Sit the fuck down.',
       'Your socks deserve a future.',
       'Pee like a gentleman, not a sprinkler.',
       'Real kings use the throne.',
@@ -49,10 +49,10 @@ const translations = {
   },
   ro: {
     lang: 'ro',
-    documentTitle: 'Ia loc — baia îți mulțumește',
+    documentTitle: 'STFD — Sit the Fuck Down',
     flag: '🇷🇴',
     badge: '🚽 Pactul de la baie',
-    title: 'Ia loc.',
+    title: 'STFD.',
     subtitle: 'Un mic manifest pentru pipi din șezut și o baie fără stropi.',
     cta: 'Gata, mă așez',
     pledgeDone: 'Așa da, civilizat ✅',
@@ -97,10 +97,10 @@ const translations = {
   },
   ru: {
     lang: 'ru',
-    documentTitle: 'Сядь — и ванная выдохнет',
+    documentTitle: 'STFD — Sit the Fuck Down',
     flag: '🇷🇺',
     badge: '🚽 Дипломатия с унитазом',
-    title: 'Садись.',
+    title: 'STFD.',
     subtitle: 'Мини-манифест за сухой пол, чистые носки и спокойную жизнь.',
     cta: 'Окей, сажусь',
     pledgeDone: 'Вот это по-человечески ✅',
@@ -145,10 +145,10 @@ const translations = {
   },
   hu: {
     lang: 'hu',
-    documentTitle: 'Ülj le — a fürdőszoba hálás lesz',
+    documentTitle: 'STFD — Sit the Fuck Down',
     flag: '🇭🇺',
     badge: '🚽 Mosdóetikett, röviden',
-    title: 'Ülj le.',
+    title: 'STFD.',
     subtitle: 'Apró kiáltvány a tiszta padlóért és a békés otthonért.',
     cta: 'Oké, leülök',
     pledgeDone: 'Na, ez már kultúra ✅',
@@ -203,7 +203,10 @@ const languageToggle = document.querySelector('#language-toggle');
 const languageFlag = document.querySelector('#language-flag');
 const languageOptions = document.querySelector('#language-options');
 
-let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('peeright-language') || 'en';
+// Storage may be unavailable in privacy-restricted browser contexts.
+let savedLanguage = null;
+try { savedLanguage = localStorage.getItem('stfd-language'); } catch {}
+let currentLang = new URLSearchParams(window.location.search).get('lang') || savedLanguage || 'en';
 let index = 0;
 let pledged = false;
 
@@ -271,7 +274,7 @@ languageOptions.addEventListener('click', (event) => {
   const button = event.target.closest('[data-lang]');
   if (!button) return;
   currentLang = button.dataset.lang;
-  localStorage.setItem('peeright-language', currentLang);
+  try { localStorage.setItem('stfd-language', currentLang); } catch {}
   pledged = false;
   languageMenu.classList.remove('open');
   languageToggle.setAttribute('aria-expanded', 'false');

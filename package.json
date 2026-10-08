@@ -1,0 +1,19 @@
+{
+  "name": "stfd",
+  "version": "1.0.0",
+  "private": true,
+  "description": "STFD — Sit the Fuck Down. A multilingual static bathroom manifesto.",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8123 --bind 0.0.0.0 --directory public",
+    "test": "playwright test",
+    "qr": "node scripts/generate-qr.mjs",
+    "size": "node scripts/size.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "jsqr": "^1.4.0",
+    "pngjs": "^7.0.0",
+    "qrcode": "^1.5.4"
+  }
+}
